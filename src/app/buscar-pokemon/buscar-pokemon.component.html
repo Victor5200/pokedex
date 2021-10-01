@@ -1,0 +1,13 @@
+<div class="col-sm-12">
+  <div class="mb-3">
+    <label class="form-label">Nome:</label>
+    <input type="text" class="form-control" placeholder="Nome do Pokemon">
+  </div>
+
+  <button class="btn btn-primary" (click)="buscarPokemon()">Buscar</button>
+
+  <div class="d-flex flex-column flex-wrap">
+    <div class="mr-2 mt-2" *ngFor="let pokemon of pokemons">{{pokemon.name}}</div>
+  </div>
+</div>
+
