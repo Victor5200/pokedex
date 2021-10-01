@@ -1,13 +1,27 @@
-<div class="col-sm-12">
-  <div class="mb-3">
-    <label class="form-label">Nome:</label>
-    <input type="text" class="form-control" placeholder="Nome do Pokemon">
-  </div>
+<form [formGroup]="formulario">
+  <div class="col-sm-12">
+    <div class="mb-3">
+      <label class="form-label">Nome:</label>
+      <input type="text" formControlName="nome" class="form-control" placeholder="Nome do Pokemon">
+    </div>
 
-  <button class="btn btn-primary" (click)="buscarPokemon()">Buscar</button>
+    <button class="btn btn-primary" (click)="buscarPokemon()">Buscar</button>
 
-  <div class="d-flex flex-column flex-wrap">
-    <div class="mr-2 mt-2" *ngFor="let pokemon of pokemons">{{pokemon.name}}</div>
+    <div class="d-flex flex-column flex-wrap">
+      <div class="mr-2 mt-2" *ngIf="pokemons">
+
+        Nome: {{pokemons.name}}
+
+        <img [src]="pokemons?.sprites?.front_default">
+
+        <h3>Habilidades</h3>
+
+        <span *ngFor="let habilidade of pokemons.abilities">
+          {{habilidade.ability.name }}
+        </span>
+      </div>
+    </div>
   </div>
-</div>
+</form>
+
 
