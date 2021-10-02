@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+.nav-bar{
+    background-color:white;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.btn{
+    margin:10px;
+    width: 110px;
+}
+
+.botao-bola{
+    width: 25%;
+}
+
+.texto{
+    margin:15px;
+    font-size: 25px;
+    margin-top: 50px;
+}
+
+body {
+    background-image: url("assets/background.jpg") !important;
+    background-size:cover;
+}
+
+.quadradito{
+    background-color:white;
+    height: 1000px;
+    border-style: solid;
+    border-width: 10px;
+    border-radius: 51px;
+    margin-right: 90px;
+
+}
