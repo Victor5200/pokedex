@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PokemonApiService} from '../service/pokemon-api-service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
     selector: 'app-pokemon-detalhe',
@@ -9,12 +10,14 @@ import {PokemonApiService} from '../service/pokemon-api-service';
 export class PokemonDetalheComponent implements OnInit {
     pokemon: any;
 
-    constructor(private pokemonApiService: PokemonApiService) {
+    constructor(private pokemonApiService: PokemonApiService, private router: Router, private activatedRoute: ActivatedRoute) {
     }
 
     ngOnInit(): void {
-        this.pokemonApiService.searchPokemonByName('bulbasaur').subscribe(retorno => {
-            this.pokemon = retorno;
+        this.activatedRoute.params.subscribe(param => {
+            this.pokemonApiService.searchPokemonByName(param.nome).subscribe(retorno => {
+                this.pokemon = retorno;
+            });
         });
     }
 
