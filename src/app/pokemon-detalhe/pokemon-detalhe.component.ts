@@ -18,10 +18,6 @@ export class PokemonDetalheComponent implements OnInit {
         });
     }
 
-    /*formataComZeros() {
-        return String.format('%010d', Integer.parseInt(this.pokemon.order));
-    }*/
-
     pad(num, size): string {
         let s = num + '';
         while (s.length < size) {

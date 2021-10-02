@@ -1,25 +1,14 @@
-<form [formGroup]="formulario">
-  <div class="col-sm-12">
-    <div class="mb-3">
-      <label class="form-label">Nome:</label>
-      <input type="text" formControlName="nome" class="form-control" placeholder="Nome do Pokemon">
-    </div>
+<div class="row col-sm-12" *ngIf="pokemons.length > 0">
+  <div class="col-sm-3 mb-2" *ngFor="let pokemon of pokemons">
+    <img class="w-100 bg-info" [src]="pokemon.urlImg" />
 
-    <button class="btn btn-primary" (click)="buscarPokemon()">Buscar</button>
+    <small class="text-left">{{'Nº: ' + pad(this.pokemon.ordem,3)}}</small>
+    <h5 class="text-black fw-bold text-capitalize">{{pokemon.nome}}</h5>
 
-    <div class="d-flex flex-column flex-wrap">
-      <div class="mr-2 mt-2" *ngIf="pokemons">
-
-        Nome: {{pokemons.name}}
-
-        <img [src]="pokemons?.sprites?.front_default">
-
-        <h3>Habilidades</h3>
-
-
-      </div>
+    <div>
+      <button class="btn btn-warning text-light col-sm-4 text-capitalize fw-bold" style="margin-right: 5px;" *ngFor="let type of pokemon.tipos">{{type.type.name}}</button>
     </div>
   </div>
-</form>
+</div>
 
 
