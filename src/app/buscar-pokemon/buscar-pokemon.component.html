@@ -1,5 +1,5 @@
-<div class="row col-sm-12" *ngIf="pokemons.length > 0">
-  <div class="col-sm-3 mb-2" *ngFor="let pokemon of pokemons">
+<div class="row col-sm-12 m-auto" *ngIf="pokemons.length > 0">
+  <div (click)="detalhes(pokemon.nome)" class="col-sm-3 mb-2 pointer" *ngFor="let pokemon of pokemons">
     <img class="w-100 bg-info" [src]="pokemon.urlImg" />
 
     <small class="text-left">{{'Nº: ' + pad(this.pokemon.ordem,3)}}</small>

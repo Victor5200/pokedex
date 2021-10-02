@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PokemonApiService} from '../service/pokemon-api-service';
 import {FormBuilder, FormGroup} from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
 
 export class Pokemon  {
   nome: string;
@@ -20,7 +21,8 @@ export class BuscarPokemonComponent implements OnInit {
   formulario: FormGroup;
 
   constructor(private pokemonApiService: PokemonApiService,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder,
+              private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.buscarPokemon();
@@ -47,5 +49,9 @@ export class BuscarPokemonComponent implements OnInit {
       s = '0' + s;
     }
     return s;
+  }
+
+  detalhes(nome: string): void {
+    this.router.navigate([ 'detalhar-pokemon', nome]);
   }
 }

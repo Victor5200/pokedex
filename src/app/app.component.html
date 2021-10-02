@@ -1,37 +1,29 @@
-<div class="container text-center">
-  <img src="../assets/pokedex.png" width="1000px" style="margin-left: 250px;" >
-  <router-outlet></router-outlet>
-</div>
-<div>
-  <div class="row">
-    <div class="col-2 m-1 justify-text-left">
+<div class="text-center">
+  <img src="../assets/pokedex.png" class="w-25">
 
-      <nav style="width:125px; height: 500px" class="nav-bar">
-        <img src="../assets/Pokemon-Logo.png" width="100px">
-        <ul class="nav flex-column">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="../assets/Pokemon-Logo.png" width="100" height="100" class="d-inline-block align-top">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
           <li class="nav-item">
-            <img style="cursor: pointer;" src="../assets/bola.png" class="botao-bola"><br>
-            <a href="#"></a>
-            <span class="texto">Pokemon</span>
+            <a class="text-black"  routerLink="/buscar-pokemon"><img style="cursor: pointer;" src="../assets/bola.png" width="50"> Pokemon </a>
           </li>
 
-          <li class="nav-item mt-5">
-            <img style="cursor:pointer" src="../assets/dark.png" class="botao-bola"><br>
-            <a href="#"></a>
-            <span class="texto">Tipo</span>
-          </li>
-
-          <li class="nav-item mt-5">
-            <img style="cursor:pointer" src="../assets/detalhes.png" class="botao-bola"><br>
-            <a href="#"></a>
-            <span class="texto">Detalhes</span>
+          <li class="nav-item ml-2">
+            <a class="text-black" routerLink="/buscar-pokemon"><img style="cursor: pointer;" src="../assets/dark.png" width="50"> Tipo </a>
           </li>
         </ul>
-        
-      </nav>
-    </div>
+      </div>
+    </nav>
 
-    <div class="col quadradito">
+    <div class="bg-white p-5 mt-2 rd-5 border-dark border-5">
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
