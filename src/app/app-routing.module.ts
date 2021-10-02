@@ -5,7 +5,7 @@ import {BuscarPokemonComponent} from './buscar-pokemon/buscar-pokemon.component'
 
 const routes: Routes = [
   { path: 'detalhar-pokemon/:nome', component: PokemonDetalheComponent },
-  { path: 'buscar-pokemon', component: BuscarPokemonComponent },
+  { path: '', component: BuscarPokemonComponent },
 ];
 
 @NgModule({
