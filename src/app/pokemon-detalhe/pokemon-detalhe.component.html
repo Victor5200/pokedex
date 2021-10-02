@@ -1,0 +1,52 @@
+<div class="d-flex flex-row">
+    <div class="row col-sm-8 bg-info p-5 mt-4">
+        <h2 class="text-center text-light text-uppercase">{{this.pokemon.name + ' N: ' + this.pokemon.order}}</h2>
+
+        <div class="col-sm-6">
+            <img class="col-sm-10" [src]="pokemon.sprites.other['official-artwork'].front_default">
+        </div>
+
+        <div class="col-sm-6 mt-5" style="border-radius: 10px">
+            <div class="d-flex flex-row flex-wrap">
+                <div class="col-sm-6">
+                    <h3 class="text-light">Altura</h3>
+                    <span class="fw-bold">{{this.pokemon.height / 10}} m</span>
+                </div>
+
+                <div class="col-sm-6">
+                    <h3 class="text-light">Peso</h3>
+                    <span class="fw-bold">{{this.pokemon.weight / 10}} kg</span>
+                </div>
+
+
+                <div class="col-sm-6 mt-5">
+                    <h3 class="text-light">Habilidades</h3>
+                    <ul>
+                        <li class="text-capitalize fw-bold"
+                            *ngFor="let habilidade of pokemon.abilities"> {{habilidade.ability.name }}</li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-6 mt-5">
+                    <h3 class="text-light">Tipos</h3>
+
+                    <button class="btn btn-secondary text-capitalize fw-bold" style="margin-right: 5px;" *ngFor="let type of pokemon.types">{{type.type.name}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4 p-5 bg-dark ml-3 mt-4 text-light">
+        <h2 class="text-center">Status</h2>
+
+        <div *ngFor="let stats of pokemon.stats">
+            <label class="text-uppercase">{{stats.stat.name}}</label>
+
+            <div class="progress mb-2 mt-2">
+                <div class="progress-bar"
+                     role="progressbar"
+                     [style]="'width:' + stats.base_stat + '%'"></div>
+            </div>
+        </div>
+    </div>
+</div>

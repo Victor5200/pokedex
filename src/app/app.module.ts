@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { BuscarPokemonComponent } from './buscar-pokemon/buscar-pokemon.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
+import { PokemonDetalheComponent } from './pokemon-detalhe/pokemon-detalhe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BuscarPokemonComponent
+    BuscarPokemonComponent,
+    PokemonDetalheComponent
   ],
   imports: [
     BrowserModule,
