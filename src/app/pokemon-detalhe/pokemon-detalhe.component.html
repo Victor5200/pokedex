@@ -1,6 +1,6 @@
 <div class="d-flex flex-row">
     <div class="row col-sm-8 bg-info p-5 mt-4">
-        <h2 class="text-center text-light text-uppercase">{{this.pokemon.name + ' N: ' + this.pokemon.order}}</h2>
+        <h2 class="text-center text-light text-capitalize">{{this.pokemon.name + ' Nº' + pad(this.pokemon.order,3)}}</h2>
 
         <div class="col-sm-6">
             <img class="col-sm-10" [src]="pokemon.sprites.other['official-artwork'].front_default">

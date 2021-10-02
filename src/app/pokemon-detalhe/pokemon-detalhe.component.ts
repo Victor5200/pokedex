@@ -1,20 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PokemonApiService} from '../service/pokemon-api-service';
 
 @Component({
-  selector: 'app-pokemon-detalhe',
-  templateUrl: './pokemon-detalhe.component.html',
-  styleUrls: ['./pokemon-detalhe.component.scss']
+    selector: 'app-pokemon-detalhe',
+    templateUrl: './pokemon-detalhe.component.html',
+    styleUrls: ['./pokemon-detalhe.component.scss']
 })
 export class PokemonDetalheComponent implements OnInit {
-  pokemon: any;
+    pokemon: any;
 
-  constructor(private pokemonApiService: PokemonApiService) { }
+    constructor(private pokemonApiService: PokemonApiService) {
+    }
 
-  ngOnInit(): void {
-    this.pokemonApiService.searchPokemonByName('bulbasaur').subscribe(retorno => {
-      this.pokemon = retorno;
-    });
-  }
+    ngOnInit(): void {
+        this.pokemonApiService.searchPokemonByName('bulbasaur').subscribe(retorno => {
+            this.pokemon = retorno;
+        });
+    }
 
+    /*formataComZeros() {
+        return String.format('%010d', Integer.parseInt(this.pokemon.order));
+    }*/
+
+    pad(num, size): string {
+        let s = num + '';
+        while (s.length < size) {
+            s = '0' + s;
+        }
+        return s;
+    }
 }
