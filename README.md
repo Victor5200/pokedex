@@ -1,6 +1,6 @@
 # Pokedex
 
-Este projeto usao [Angular CLI](https://github.com/angular/angular-cli) na versão 11.2.10.
+Este projeto usa o [Angular CLI](https://github.com/angular/angular-cli) na versão 11.2.10.
 
 ## Start da Aplicação
 
